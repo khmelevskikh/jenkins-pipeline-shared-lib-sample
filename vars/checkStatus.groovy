@@ -3,9 +3,8 @@
 def call(body) {
     echo "Check status"
 
-    (1..3).each {
-        echo "Number: " + it
-    }
+    echo env.JOB_NAME
+    echo env.RUN_DISPLAY_URL
 
     currentBuild.result = 'SUCCESS' //FAILURE to fail
     return this
