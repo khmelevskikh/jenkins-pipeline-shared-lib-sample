@@ -5,6 +5,8 @@ def call(body) {
 
     echo env.JOB_NAME
     echo env.RUN_DISPLAY_URL
+    
+    build job: 'pipe'
 
     currentBuild.result = 'SUCCESS' //FAILURE to fail
     return this
