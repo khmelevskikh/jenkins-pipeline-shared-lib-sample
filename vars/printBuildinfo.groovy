@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 import hudson.model.*
+import hudson.FilePath
     
 def call(body) {
     def config = [:]
