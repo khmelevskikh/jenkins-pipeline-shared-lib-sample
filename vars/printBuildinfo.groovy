@@ -12,5 +12,12 @@ def call(body) {
     if (env.param1 == 'One default') {
         echo "Param1 is default"
     }
+    
+    git branch: 'master',
+        credentialsId: 'nc_git',
+        url: 'git@git.netcracker.com:khmelevskikh/test.git'
+
+    sh "chmod +x $WORKSPACE/test_instances.sh"  
+
     return this
 }
