@@ -1,4 +1,4 @@
-    def notifySuccessful(emailReport) {
+    def notifySuccessful() {
         emailext (
                 subject: "SUCCESSFUL: Job '${JOB_NAME} [${BUILD_NUMBER}]' ",
                 body: '''<p>SUCCESSFUL: Job '${JOB_NAME} [${BUILD_NUMBER}]':</p>
@@ -19,3 +19,12 @@
           to: "$RECIPIENTS"
         )
     }
+    
+def call(String status = 'SUCCESS') {
+    if (status == 'SUCCESS') {
+        notifySuccessful
+    }
+    if (status == 'FAIL') {
+        notifyFailed
+    }
+}
