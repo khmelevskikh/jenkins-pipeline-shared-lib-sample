@@ -12,7 +12,7 @@ def call(body) {
     if (env.param1 == 'One default') {
         echo "Param1 is default"
     }
-    sh "chmod +x $WORKSPACE/test_instances.sh"  
+    sh "ls -la $WORKSPACE"  
 
     return this
 }
