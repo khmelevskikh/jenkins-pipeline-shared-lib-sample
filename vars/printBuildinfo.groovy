@@ -14,7 +14,7 @@ def call(body) {
     }
     if (env.param1 == 'FAIL') {
       log.error "Build was marked as failed"
-      currentBuild.result = 'FAILURE'
+      currentBuild.result = 'SUCCESS'
     }
     sh "ls -la $WORKSPACE"  
 
