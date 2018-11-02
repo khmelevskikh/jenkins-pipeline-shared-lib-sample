@@ -6,11 +6,15 @@ def call(body) {
     body.delegate = config
     body()
 
-    echo config.name
-    echo "Param1 is: ${env.param1}"
-    echo "Param2 is: ${env.param2}"
+    log.info config.name
+    log.info "Param1 is: ${env.param1}"
+    log.info "Param2 is: ${env.param2}"
     if (env.param1 == 'One default') {
-        echo "Param1 is default"
+        log.info "Param1 is default"
+    }
+    if (env.param1 == 'FAIL') {
+      log.error "Build was marked as failed"
+      currentBuild.result = 'FAILURE'
     }
     sh "ls -la $WORKSPACE"  
 
