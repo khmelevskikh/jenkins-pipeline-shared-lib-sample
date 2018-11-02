@@ -22,9 +22,9 @@
     
 def call(String status = 'SUCCESS') {
     if (status == 'SUCCESS') {
-        notifySuccessful
+        notifySuccessful()
     }
     if (status == 'FAIL') {
-        notifyFailed
+        notifyFailed()
     }
 }
