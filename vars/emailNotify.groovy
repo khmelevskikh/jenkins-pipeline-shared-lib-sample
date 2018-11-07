@@ -10,7 +10,7 @@
     
     def notifyFailed() {
       emailext (
-          subject: "FAILED: Job '${JOB_NAME} [${BUILD_NUMBER}]' with env ${ENV} ${SCOPE}",
+          subject: "FAILED: Job '${JOB_NAME} [${BUILD_NUMBER}]'",
           body: '''<p>FAILED: Job '${JOB_NAME} [${BUILD_NUMBER}]':</p>
                 <p>Check console output at "<a href="${BUILD_URL}">${JOB_NAME} [${BUILD_NUMBER}]</a>"</p>
                 <p>${BUILD_LOG, maxLines=150, escapeHtml=false}</p>
