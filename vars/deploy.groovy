@@ -7,8 +7,8 @@ def call(body) {
     new Deployer(script:this).run()
     
     File theFile = new File("$WORKSPACE/Jenkinsfile");
-    log.info "Param1 is: " + theFile.getParent()
-    log.info "Param1 is: " + theFile.getName()
+    log.info "Location is: " + theFile.getParent()
+    log.info "File name is: " + theFile.getName()
     echo "Deployed"
     currentBuild.result = 'SUCCESS' //FAILURE to fail
 
